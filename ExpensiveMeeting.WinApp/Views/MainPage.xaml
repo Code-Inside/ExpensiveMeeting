@@ -84,8 +84,11 @@
             <TextBox  Grid.Column="1" Grid.Row="0"></TextBox>
             <TextBlock Grid.Column="0" Grid.Row="1">Average Salary</TextBlock>
             <TextBox  Grid.Column="1" Grid.Row="1"></TextBox>
-            <Button Grid.Column="0" Grid.Row="2">Start Meeting</Button>
-            <Button  Grid.Column="1" Grid.Row="2">Stop Meeting</Button>
+            <StackPanel  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button>Start Meeting</Button>
+                <Button>Stop Meeting</Button>
+            </StackPanel>
+           
         </Grid>
        
 
