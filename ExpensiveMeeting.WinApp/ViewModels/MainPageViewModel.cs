@@ -12,6 +12,12 @@ namespace ExpensiveMeeting.WinApp.ViewModels
                 Value = "Designtime value";
         }
 
+        int _NumberOfPeople;
+        public int NumberOfPeople { get { return _NumberOfPeople; } set { Set(ref _NumberOfPeople, value); } }
+
+        double _AverageSalery;
+        public double AverageSalery { get { return _AverageSalery; } set { Set(ref _AverageSalery, value); } }
+
         string _Value = string.Empty;
         public string Value { get { return _Value; } set { Set(ref _Value, value); } }
 
