@@ -8,8 +8,6 @@ namespace ExpensiveMeeting.WinApp.ViewModels
     {
         public MainPageViewModel()
         {
-            if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
-                Value = "Designtime value";
         }
 
         int _NumberOfPeople;
@@ -18,26 +16,41 @@ namespace ExpensiveMeeting.WinApp.ViewModels
         double _AverageSalery;
         public double AverageSalery { get { return _AverageSalery; } set { Set(ref _AverageSalery, value); } }
 
-        string _Value = string.Empty;
-        public string Value { get { return _Value; } set { Set(ref _Value, value); } }
+        double _MoneyBurndownCounter;
+        public double MoneyBurndownCounter { get { return _MoneyBurndownCounter; } set { Set(ref _MoneyBurndownCounter, value); } }
+
+        double _MoneyBurndownPerMinute;
+        public double MoneyBurndownPerMinute { get { return _MoneyBurndownPerMinute; } set { Set(ref _MoneyBurndownPerMinute, value); } }
+
+        double _MoneyBurndownPerFithteenMinutes;
+        public double MoneyBurndownPerFithteenMinutes { get { return _MoneyBurndownPerFithteenMinutes; } set { Set(ref _MoneyBurndownPerFithteenMinutes, value); } }
+
+        double _MoneyBurndownPerHour;
+        public double MoneyBurndownPerHour { get { return _MoneyBurndownPerHour; } set { Set(ref _MoneyBurndownPerHour, value); } }
 
         public override void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state)
         {
-            if (state.ContainsKey(nameof(Value)))
-                Value = state[nameof(Value)]?.ToString();
             state.Clear();
         }
 
         public override async Task OnNavigatedFromAsync(IDictionary<string, object> state, bool suspending)
         {
-            if (suspending)
-                state[nameof(Value)] = Value;
             await Task.Yield();
         }
 
         public void GotoDetailsPage()
         {
-            NavigationService.Navigate(typeof(Views.DetailPage), Value);
+            NavigationService.Navigate(typeof(Views.DetailPage));
+        }
+
+        public void StartMeeting()
+        {
+            MoneyBurndownCounter = 500;
+        }
+
+        public void StopMeeting()
+        {
+            MoneyBurndownCounter = 0;
         }
 
         public void GotoPrivacy()

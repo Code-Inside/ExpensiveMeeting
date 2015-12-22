@@ -68,28 +68,26 @@
 
         <!--  page content  -->
 
-        <Grid Grid.Row="1" VerticalAlignment="Top" Padding="12,8,0,0">
+        <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" Padding="12,8,0,0">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            
-            <TextBlock Grid.Column="0" Grid.Row="0">Number of People</TextBlock>
-            <TextBox  Grid.Column="1" Grid.Row="0"></TextBox>
-            <TextBlock Grid.Column="0" Grid.Row="1">Average Salary</TextBlock>
-            <TextBox  Grid.Column="1" Grid.Row="1"></TextBox>
-            <StackPanel  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button>Start Meeting</Button>
-                <Button>Stop Meeting</Button>
+            <StackPanel>
+                <TextBlock>Number of People</TextBlock>
+                <TextBox Text="{Binding NumberOfPeople}"></TextBox>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock>Average Salary</TextBlock>
+                <TextBox Text="{Binding AverageSalery}"></TextBox>
+            </StackPanel>
+
+            <TextBox Text="{Binding MoneyBurndownCounter}"></TextBox>
+
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Click="{x:Bind ViewModel.StartMeeting}">Start Meeting</Button>
+                <Button Click="{x:Bind ViewModel.StopMeeting}">Stop Meeting</Button>
             </StackPanel>
            
-        </Grid>
+        </StackPanel>
        
 
     </Grid>
