@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Navigation;
 
@@ -28,6 +31,9 @@ namespace ExpensiveMeeting.WinApp.ViewModels
         double _MoneyBurndownPerHour;
         public double MoneyBurndownPerHour { get { return _MoneyBurndownPerHour; } set { Set(ref _MoneyBurndownPerHour, value); } }
 
+        TimeSpan _Timer;
+        public TimeSpan Timer { get { return _Timer; } set { Set(ref _Timer, value); } }
+
         public override void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state)
         {
             state.Clear();
@@ -45,6 +51,11 @@ namespace ExpensiveMeeting.WinApp.ViewModels
 
         public void StartMeeting()
         {
+            if(this.Timer == null)
+            {
+                this.Timer = new TimeSpan();
+            }
+            this.Timer = this.Timer.Add(TimeSpan.FromMinutes(1));
             MoneyBurndownCounter = 500;
         }
 

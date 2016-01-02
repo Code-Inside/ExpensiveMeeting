@@ -80,6 +80,7 @@
                 <TextBox Text="{Binding AverageSalery}"></TextBox>
             </StackPanel>
 
+            <TextBox Text="{Binding Timer}"></TextBox>
             <TextBox Text="{Binding MoneyBurndownCounter}"></TextBox>
 
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
