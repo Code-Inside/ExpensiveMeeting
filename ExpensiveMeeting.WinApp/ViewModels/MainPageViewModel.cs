@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
 
 namespace ExpensiveMeeting.WinApp.ViewModels
@@ -11,6 +12,7 @@ namespace ExpensiveMeeting.WinApp.ViewModels
     {
         public MainPageViewModel()
         {
+            this.ElapsedTime = new TimeSpan();
         }
 
         int _NumberOfPeople;
@@ -31,8 +33,8 @@ namespace ExpensiveMeeting.WinApp.ViewModels
         double _MoneyBurndownPerHour;
         public double MoneyBurndownPerHour { get { return _MoneyBurndownPerHour; } set { Set(ref _MoneyBurndownPerHour, value); } }
 
-        TimeSpan _Timer;
-        public TimeSpan Timer { get { return _Timer; } set { Set(ref _Timer, value); } }
+        TimeSpan _ElapsedTime;
+        public TimeSpan ElapsedTime { get { return _ElapsedTime; } set { Set(ref _ElapsedTime, value); } }
 
         public override void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state)
         {
@@ -49,19 +51,34 @@ namespace ExpensiveMeeting.WinApp.ViewModels
             NavigationService.Navigate(typeof(Views.DetailPage));
         }
 
+        private bool isTimerRunning;
+        private async void StartTimer(TimeSpan MyInterval, TimeSpan TotalTime)
+        {
+            isTimerRunning = true;
+            int i = 0;
+            double TotalSeconds = TotalTime.TotalSeconds;
+            double MyIntervalSeconds = MyInterval.TotalSeconds;
+            while (this.isTimerRunning)
+            {
+                this.ElapsedTime = this.ElapsedTime.Add(TimeSpan.FromSeconds(1));
+
+                await Task.Delay(MyInterval);
+                i = i++;
+                if (TotalSeconds <= i * MyIntervalSeconds)
+                {
+                    isTimerRunning = false;
+                }
+            }
+        }
+        
+
         public void StartMeeting()
         {
-            if(this.Timer == null)
-            {
-                this.Timer = new TimeSpan();
-            }
-            this.Timer = this.Timer.Add(TimeSpan.FromMinutes(1));
-            MoneyBurndownCounter = 500;
+            StartTimer(TimeSpan.FromSeconds(1), TimeSpan.FromDays(1));
         }
 
         public void StopMeeting()
         {
-            MoneyBurndownCounter = 0;
         }
 
         public void GotoPrivacy()
