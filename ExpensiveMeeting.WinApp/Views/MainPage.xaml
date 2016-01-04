@@ -80,8 +80,32 @@
                 <TextBox Text="{Binding AverageSalery}"></TextBox>
             </StackPanel>
 
-            <TextBox Text="{Binding ElapsedTime}"></TextBox>
-            <TextBox Text="{Binding MoneyBurndownCounter}"></TextBox>
+            <Line />
+
+            <StackPanel>
+                <TextBlock>MoneyBurndown per Minute:</TextBlock>
+                <TextBlock Text="{Binding MoneyBurndownPerMinute}" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock>MoneyBurndown per 15 Minutes:</TextBlock>
+                <TextBlock Text="{Binding MoneyBurndownPerFithteenMinutes}" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock>MoneyBurndown per Hour:</TextBlock>
+                <TextBlock Text="{Binding MoneyBurndownPerHour}" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock>Total Costs currently:</TextBlock>
+                <TextBlock Text="{Binding MoneyBurndownCounter}" />
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock>Elapsed Time:</TextBlock>
+                <TextBlock Text="{Binding ElapsedTime}" />
+            </StackPanel>
 
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Click="{x:Bind ViewModel.StartMeeting}">Start Meeting</Button>

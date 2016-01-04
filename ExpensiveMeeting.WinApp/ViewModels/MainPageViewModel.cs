@@ -13,6 +13,8 @@ namespace ExpensiveMeeting.WinApp.ViewModels
         public MainPageViewModel()
         {
             this.ElapsedTime = new TimeSpan();
+            this.NumberOfPeople = 4;
+            this.AverageSalery = 100000;
         }
 
         int _NumberOfPeople;
@@ -51,34 +53,41 @@ namespace ExpensiveMeeting.WinApp.ViewModels
             NavigationService.Navigate(typeof(Views.DetailPage));
         }
 
-        private bool isTimerRunning;
-        private async void StartTimer(TimeSpan MyInterval, TimeSpan TotalTime)
+        private bool IsMeetingStillGoingOn
         {
-            isTimerRunning = true;
-            int i = 0;
-            double TotalSeconds = TotalTime.TotalSeconds;
-            double MyIntervalSeconds = MyInterval.TotalSeconds;
-            while (this.isTimerRunning)
+            get; set;
+        }
+
+        private async void CalculateCosts()
+        {
+            var costsPerHourForOne = AverageSalery / 2000; // OECD max work hours 
+
+            MoneyBurndownPerHour = costsPerHourForOne * NumberOfPeople;
+            MoneyBurndownPerMinute = MoneyBurndownPerHour / 60;
+            MoneyBurndownPerFithteenMinutes = MoneyBurndownPerMinute * 15;
+
+            var costsPerSecondsForAll = MoneyBurndownPerMinute / 60;
+
+            while (this.IsMeetingStillGoingOn)
             {
                 this.ElapsedTime = this.ElapsedTime.Add(TimeSpan.FromSeconds(1));
 
-                await Task.Delay(MyInterval);
-                i = i++;
-                if (TotalSeconds <= i * MyIntervalSeconds)
-                {
-                    isTimerRunning = false;
-                }
+                MoneyBurndownCounter = this.ElapsedTime.TotalSeconds * costsPerSecondsForAll;   
+
+                await Task.Delay(TimeSpan.FromSeconds(1));
             }
         }
-        
+
 
         public void StartMeeting()
         {
-            StartTimer(TimeSpan.FromSeconds(1), TimeSpan.FromDays(1));
+            this.IsMeetingStillGoingOn = true;
+            CalculateCosts();
         }
 
         public void StopMeeting()
         {
+            this.IsMeetingStillGoingOn = false;
         }
 
         public void GotoPrivacy()
