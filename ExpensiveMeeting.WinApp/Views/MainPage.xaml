@@ -9,13 +9,14 @@
       xmlns:local="using:ExpensiveMeeting.WinApp.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:ExpensiveMeeting.WinApp.ViewModels" mc:Ignorable="d">
-
     <Page.DataContext>
         <vm:MainPageViewModel />
     </Page.DataContext>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/background.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <!--  #region default visual states  -->
 
         <VisualStateManager.VisualStateGroups>
@@ -54,21 +55,9 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <!--  page header  -->
-
-        <controls:PageHeader BackButtonVisibility="Collapsed" Content="Main Page" Frame="{x:Bind Frame}">
-            <Interactivity:Interaction.Behaviors>
-                <Behaviors:EllipsisBehavior Visibility="Auto" />
-            </Interactivity:Interaction.Behaviors>
-            <controls:PageHeader.SecondaryCommands>
-                <AppBarButton Click="{x:Bind ViewModel.GotoPrivacy}" Label="Privacy" />
-                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}" Label="About" />
-            </controls:PageHeader.SecondaryCommands>
-        </controls:PageHeader>
-
         <!--  page content  -->
 
-        <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" Padding="12,8,0,0">
+        <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" Padding="12,8,12,0">
 
             <StackPanel>
                 <TextBlock>Number of People</TextBlock>

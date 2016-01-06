@@ -48,11 +48,6 @@ namespace ExpensiveMeeting.WinApp.ViewModels
             await Task.Yield();
         }
 
-        public void GotoDetailsPage()
-        {
-            NavigationService.Navigate(typeof(Views.DetailPage));
-        }
-
         private bool IsMeetingStillGoingOn
         {
             get; set;
