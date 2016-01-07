@@ -53,6 +53,15 @@ namespace ExpensiveMeeting.WinApp.ViewModels
             get; set;
         }
 
+        private void Reset()
+        {
+            MoneyBurndownPerHour = 0;
+            MoneyBurndownPerMinute = 0;
+            MoneyBurndownPerFithteenMinutes = 0;
+            MoneyBurndownCounter = 0;
+            ElapsedTime = new TimeSpan();
+        }
+
         private async void CalculateCosts()
         {
             var costsPerHourForOne = AverageSalery / 2000; // OECD max work hours 
@@ -80,21 +89,16 @@ namespace ExpensiveMeeting.WinApp.ViewModels
             CalculateCosts();
         }
 
-        public void StopMeeting()
+        public void PauseMeeting()
         {
             this.IsMeetingStillGoingOn = false;
         }
 
-        public void GotoPrivacy()
+        public void RestartMeeting()
         {
-            NavigationService.Navigate(typeof(Views.SettingsPage), 1);
+            this.IsMeetingStillGoingOn = false;
+            Reset();
         }
-
-        public void GotoAbout()
-        {
-            NavigationService.Navigate(typeof(Views.SettingsPage), 2);
-        }
-
     }
 }
 

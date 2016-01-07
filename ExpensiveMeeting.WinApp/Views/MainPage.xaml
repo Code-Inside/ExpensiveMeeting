@@ -98,7 +98,8 @@
 
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Click="{x:Bind ViewModel.StartMeeting}">Start Meeting</Button>
-                <Button Click="{x:Bind ViewModel.StopMeeting}">Stop Meeting</Button>
+                <Button Click="{x:Bind ViewModel.PauseMeeting}">Pause Meeting</Button>
+                <Button Click="{x:Bind ViewModel.RestartMeeting}">Restart Meeting</Button>
             </StackPanel>
            
         </StackPanel>
