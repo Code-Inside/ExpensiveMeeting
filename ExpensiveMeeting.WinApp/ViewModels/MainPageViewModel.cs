@@ -35,6 +35,10 @@ namespace ExpensiveMeeting.WinApp.ViewModels
         double _MoneyBurndownPerHour;
         public double MoneyBurndownPerHour { get { return _MoneyBurndownPerHour; } set { Set(ref _MoneyBurndownPerHour, value); } }
 
+        bool _IsMeetingRunning;
+        public bool IsMeetingRunning { get { return _IsMeetingRunning; } set { Set(ref _IsMeetingRunning, value); } }
+
+
         TimeSpan _ElapsedTime;
         public TimeSpan ElapsedTime { get { return _ElapsedTime; } set { Set(ref _ElapsedTime, value); } }
 
@@ -48,10 +52,7 @@ namespace ExpensiveMeeting.WinApp.ViewModels
             await Task.Yield();
         }
 
-        private bool IsMeetingStillGoingOn
-        {
-            get; set;
-        }
+       
 
         private void Reset()
         {
@@ -72,7 +73,7 @@ namespace ExpensiveMeeting.WinApp.ViewModels
 
             var costsPerSecondsForAll = MoneyBurndownPerMinute / 60;
 
-            while (this.IsMeetingStillGoingOn)
+            while (this.IsMeetingRunning)
             {
                 this.ElapsedTime = this.ElapsedTime.Add(TimeSpan.FromSeconds(1));
 
@@ -85,18 +86,18 @@ namespace ExpensiveMeeting.WinApp.ViewModels
 
         public void StartMeeting()
         {
-            this.IsMeetingStillGoingOn = true;
+            this.IsMeetingRunning = true;
             CalculateCosts();
         }
 
         public void PauseMeeting()
         {
-            this.IsMeetingStillGoingOn = false;
+            this.IsMeetingRunning = false;
         }
 
         public void RestartMeeting()
         {
-            this.IsMeetingStillGoingOn = false;
+            this.IsMeetingRunning = false;
             Reset();
         }
     }

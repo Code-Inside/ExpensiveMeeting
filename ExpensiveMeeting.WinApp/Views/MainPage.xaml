@@ -5,6 +5,7 @@
       xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
       xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
       xmlns:controls="using:Template10.Controls"
+      xmlns:converters="using:ExpensiveMeeting.WinApp.Converters"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:ExpensiveMeeting.WinApp.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -12,7 +13,11 @@
     <Page.DataContext>
         <vm:MainPageViewModel />
     </Page.DataContext>
-
+    <Page.Resources>
+        <converters:StringFormatConverter x:Key="StringFormatConverter" />
+        <converters:BooleanToVisibilityConverter IsReversed="True" x:Key="ReversedBooleanToVisibilityConverter" />
+        <converters:BooleanToVisibilityConverter IsReversed="False" x:Key="BooleanToVisibilityConverter" />
+    </Page.Resources>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="ms-appx:///Assets/background.jpg" Stretch="UniformToFill"/>
@@ -69,26 +74,24 @@
                 <TextBox Text="{Binding AverageSalery}"></TextBox>
             </StackPanel>
 
-            <Line />
-
             <StackPanel>
                 <TextBlock>MoneyBurndown per Minute:</TextBlock>
-                <TextBlock Text="{Binding MoneyBurndownPerMinute}" />
+                <TextBlock Text="{Binding MoneyBurndownPerMinute, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:#,#.00}'}" />
             </StackPanel>
 
             <StackPanel>
                 <TextBlock>MoneyBurndown per 15 Minutes:</TextBlock>
-                <TextBlock Text="{Binding MoneyBurndownPerFithteenMinutes}" />
+                <TextBlock Text="{Binding MoneyBurndownPerFithteenMinutes, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:#,#.00}'}" />
             </StackPanel>
 
             <StackPanel>
                 <TextBlock>MoneyBurndown per Hour:</TextBlock>
-                <TextBlock Text="{Binding MoneyBurndownPerHour}" />
+                <TextBlock Text="{Binding MoneyBurndownPerHour, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:#,#.00}'}" />
             </StackPanel>
 
             <StackPanel>
                 <TextBlock>Total Costs currently:</TextBlock>
-                <TextBlock Text="{Binding MoneyBurndownCounter}" />
+                <TextBlock Text="{Binding MoneyBurndownCounter, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:#,#.00}'}" />
             </StackPanel>
 
             <StackPanel>
@@ -97,9 +100,9 @@
             </StackPanel>
 
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Click="{x:Bind ViewModel.StartMeeting}">Start Meeting</Button>
-                <Button Click="{x:Bind ViewModel.PauseMeeting}">Pause Meeting</Button>
-                <Button Click="{x:Bind ViewModel.RestartMeeting}">Restart Meeting</Button>
+                <Button Visibility="{Binding IsMeetingRunning, Converter={StaticResource ReversedBooleanToVisibilityConverter}}" Click="{x:Bind ViewModel.StartMeeting}">Start Meeting</Button>
+                <Button Visibility="{Binding IsMeetingRunning, Converter={StaticResource BooleanToVisibilityConverter}}" Click="{x:Bind ViewModel.PauseMeeting}">Pause Meeting</Button>
+                <Button Visibility="{Binding IsMeetingRunning, Converter={StaticResource BooleanToVisibilityConverter}}" Click="{x:Bind ViewModel.RestartMeeting}">Restart Meeting</Button>
             </StackPanel>
            
         </StackPanel>
