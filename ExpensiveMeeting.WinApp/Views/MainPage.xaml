@@ -69,42 +69,43 @@
             </StackPanel.Background>
 
             <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource ReversedBooleanToVisibilityConverter}}">
-                <StackPanel>
-                    <TextBlock>Number of People</TextBlock>
-                    <TextBox Text="{Binding NumberOfPeople}"></TextBox>
+                <StackPanel Margin="12">
+                    <TextBlock Margin="4">Number of People</TextBlock>
+                    <TextBox Margin="4" Text="{Binding NumberOfPeople}"></TextBox>
                 </StackPanel>
 
-                <StackPanel>
-                    <TextBlock>Average Salary</TextBlock>
-                    <TextBox Text="{Binding AverageSalery}"></TextBox>
+                <StackPanel Margin="12">
+                    <TextBlock Margin="4">Average Salary</TextBlock>
+                    <TextBox Margin="4" Text="{Binding AverageSalery}"></TextBox>
                 </StackPanel>
             </StackPanel>
 
             <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <StackPanel>
-                    <TextBlock>MoneyBurndown per Minute:</TextBlock>
-                    <TextBlock Text="{Binding MoneyBurndownPerMinute, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                <TextBlock Margin="0,2,0,2" HorizontalAlignment="Center" FontWeight="Light" Text="You already burned:" />
+
+                <TextBlock Margin="0,8,0,8" HorizontalAlignment="Center" FontSize="42" FontWeight="Bold" Text="{Binding MoneyBurndownCounter, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+
+                <TextBlock Margin="0,2,0,2" HorizontalAlignment="Center" FontWeight="Light" Text="Meeting Duration:" />
+
+                <TextBlock Margin="0,8,0,8" HorizontalAlignment="Center" FontSize="24" Text="{Binding ElapsedTime}" />
+
+                <TextBlock Margin="0,8,0,2" HorizontalAlignment="Center" FontWeight="Bold" Text="Burnrates" />
+
+                <StackPanel Margin="0,8,0,2" HorizontalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Text="{Binding MoneyBurndownPerMinute, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                    <TextBlock HorizontalAlignment="Center">1min</TextBlock>
                 </StackPanel>
 
-                <StackPanel>
-                    <TextBlock>MoneyBurndown per 15 Minutes:</TextBlock>
-                    <TextBlock Text="{Binding MoneyBurndownPerFithteenMinutes, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                <StackPanel Margin="0,8,0,2" HorizontalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Text="{Binding MoneyBurndownPerFithteenMinutes, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                    <TextBlock HorizontalAlignment="Center">15min</TextBlock>
                 </StackPanel>
 
-                <StackPanel>
-                    <TextBlock>MoneyBurndown per Hour:</TextBlock>
-                    <TextBlock Text="{Binding MoneyBurndownPerHour, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                <StackPanel Margin="0,8,0,2" HorizontalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Text="{Binding MoneyBurndownPerHour, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                    <TextBlock HorizontalAlignment="Center">60min</TextBlock>
                 </StackPanel>
-
-                <StackPanel>
-                    <TextBlock>Total Costs currently:</TextBlock>
-                    <TextBlock Text="{Binding MoneyBurndownCounter, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
-                </StackPanel>
-
-                <StackPanel>
-                    <TextBlock>Elapsed Time:</TextBlock>
-                    <TextBlock Text="{Binding ElapsedTime}" />
-                </StackPanel>
+               
             </StackPanel>
 
             <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource BooleanToVisibilityConverter}}" Orientation="Horizontal" HorizontalAlignment="Center">
