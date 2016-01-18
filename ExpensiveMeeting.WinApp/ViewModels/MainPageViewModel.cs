@@ -38,6 +38,8 @@ namespace ExpensiveMeeting.WinApp.ViewModels
         bool _IsMeetingRunning;
         public bool IsMeetingRunning { get { return _IsMeetingRunning; } set { Set(ref _IsMeetingRunning, value); } }
 
+        bool _IsMeetingStarted;
+        public bool IsMeetingStarted { get { return _IsMeetingStarted; } set { Set(ref _IsMeetingStarted, value); } }
 
         TimeSpan _ElapsedTime;
         public TimeSpan ElapsedTime { get { return _ElapsedTime; } set { Set(ref _ElapsedTime, value); } }
@@ -56,6 +58,8 @@ namespace ExpensiveMeeting.WinApp.ViewModels
 
         private void Reset()
         {
+            IsMeetingRunning = false;
+            IsMeetingStarted = false;
             MoneyBurndownPerHour = 0;
             MoneyBurndownPerMinute = 0;
             MoneyBurndownPerFithteenMinutes = 0;
@@ -86,6 +90,7 @@ namespace ExpensiveMeeting.WinApp.ViewModels
 
         public void StartMeeting()
         {
+            this.IsMeetingStarted = true;
             this.IsMeetingRunning = true;
             CalculateCosts();
         }
@@ -97,7 +102,7 @@ namespace ExpensiveMeeting.WinApp.ViewModels
 
         public void RestartMeeting()
         {
-            this.IsMeetingRunning = false;
+            
             Reset();
         }
     }

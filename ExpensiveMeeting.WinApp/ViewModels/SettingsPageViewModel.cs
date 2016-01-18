@@ -18,12 +18,6 @@ namespace ExpensiveMeeting.WinApp.ViewModels
             if (!Windows.ApplicationModel.DesignMode.DesignModeEnabled)
                 _settings = Services.SettingsServices.SettingsService.Instance;
         }
-
-        public bool UseLightThemeButton
-        {
-            get { return _settings.AppTheme.Equals(ApplicationTheme.Light); }
-            set { _settings.AppTheme = value ? ApplicationTheme.Light : ApplicationTheme.Dark; base.RaisePropertyChanged(); }
-        }
     }
 
     public class AboutPartViewModel : Mvvm.ViewModelBase

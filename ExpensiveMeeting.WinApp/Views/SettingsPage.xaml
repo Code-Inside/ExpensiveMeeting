@@ -61,15 +61,6 @@
         <!--  #region content  -->
 
         <Pivot x:Name="MyPivot" Grid.Row="1">
-            <PivotItem DataContext="{Binding SettingsPartViewModel}" Header="Settings">
-                <ScrollViewer Margin="0,12,-12,0" HorizontalContentAlignment="Left" VerticalScrollBarVisibility="Auto">
-                    <RelativePanel HorizontalAlignment="Left">
-                        <ToggleSwitch x:Name="UseLightThemeToggleSwitch" Header="Use Light Theme"
-                                      IsOn="{Binding UseLightThemeButton, Mode=TwoWay}"
-                                      OffContent="Dark theme" OnContent="Light theme" />
-                    </RelativePanel>
-                </ScrollViewer>
-            </PivotItem>
             <PivotItem DataContext="{Binding SettingsPartViewModel}" Header="Privacy statement" Padding="0">
                 <ScrollViewer Margin="0,0,-12,0" VerticalScrollBarVisibility="Auto">
                     <TextBlock Margin="0,12,24,12" LineHeight="24" TextWrapping="Wrap">

@@ -5,7 +5,8 @@
       xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
       xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
       xmlns:controls="using:Template10.Controls"
-      xmlns:converters="using:ExpensiveMeeting.WinApp.Converters"
+      xmlns:ownConverters="using:ExpensiveMeeting.WinApp.Converters"
+      xmlns:converters="using:Template10.Converters"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:ExpensiveMeeting.WinApp.Views"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -15,8 +16,8 @@
     </Page.DataContext>
     <Page.Resources>
         <converters:StringFormatConverter x:Key="StringFormatConverter" />
-        <converters:BooleanToVisibilityConverter IsReversed="True" x:Key="ReversedBooleanToVisibilityConverter" />
-        <converters:BooleanToVisibilityConverter IsReversed="False" x:Key="BooleanToVisibilityConverter" />
+        <ownConverters:BooleanToVisibilityConverter IsReversed="True" x:Key="ReversedBooleanToVisibilityConverter" />
+        <ownConverters:BooleanToVisibilityConverter IsReversed="False" x:Key="BooleanToVisibilityConverter" />
     </Page.Resources>
     <Grid>
         <Grid.Background>
@@ -62,51 +63,60 @@
 
         <!--  page content  -->
 
-        <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" Padding="12,8,12,0">
+        <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" Padding="12,8,12,8" Margin="24">
+            <StackPanel.Background>
+                <SolidColorBrush Color="Black" Opacity="0.6" />
+            </StackPanel.Background>
 
-            <StackPanel>
-                <TextBlock>Number of People</TextBlock>
-                <TextBox Text="{Binding NumberOfPeople}"></TextBox>
+            <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource ReversedBooleanToVisibilityConverter}}">
+                <StackPanel>
+                    <TextBlock>Number of People</TextBlock>
+                    <TextBox Text="{Binding NumberOfPeople}"></TextBox>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock>Average Salary</TextBlock>
+                    <TextBox Text="{Binding AverageSalery}"></TextBox>
+                </StackPanel>
             </StackPanel>
 
-            <StackPanel>
-                <TextBlock>Average Salary</TextBlock>
-                <TextBox Text="{Binding AverageSalery}"></TextBox>
+            <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <StackPanel>
+                    <TextBlock>MoneyBurndown per Minute:</TextBlock>
+                    <TextBlock Text="{Binding MoneyBurndownPerMinute, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock>MoneyBurndown per 15 Minutes:</TextBlock>
+                    <TextBlock Text="{Binding MoneyBurndownPerFithteenMinutes, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock>MoneyBurndown per Hour:</TextBlock>
+                    <TextBlock Text="{Binding MoneyBurndownPerHour, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock>Total Costs currently:</TextBlock>
+                    <TextBlock Text="{Binding MoneyBurndownCounter, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock>Elapsed Time:</TextBlock>
+                    <TextBlock Text="{Binding ElapsedTime}" />
+                </StackPanel>
             </StackPanel>
 
-            <StackPanel>
-                <TextBlock>MoneyBurndown per Minute:</TextBlock>
-                <TextBlock Text="{Binding MoneyBurndownPerMinute, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:#,#.00}'}" />
+            <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource BooleanToVisibilityConverter}}" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Opacity="1" Margin="4,4,4,4" Visibility="{Binding IsMeetingRunning, Converter={StaticResource ReversedBooleanToVisibilityConverter}}" Click="{x:Bind ViewModel.StartMeeting}">Continue Meeting</Button>
+                <Button Opacity="1" Margin="4,4,4,4" Visibility="{Binding IsMeetingRunning, Converter={StaticResource BooleanToVisibilityConverter}}" Click="{x:Bind ViewModel.PauseMeeting}">Pause Meeting</Button>
+                <Button Opacity="1" Margin="4,4,4,4" Visibility="{Binding IsMeetingRunning, Converter={StaticResource BooleanToVisibilityConverter}}" Click="{x:Bind ViewModel.RestartMeeting}">Restart Meeting</Button>
             </StackPanel>
-
-            <StackPanel>
-                <TextBlock>MoneyBurndown per 15 Minutes:</TextBlock>
-                <TextBlock Text="{Binding MoneyBurndownPerFithteenMinutes, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:#,#.00}'}" />
+            <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource ReversedBooleanToVisibilityConverter}}" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Opacity="1" Margin="4,4,4,4" Click="{x:Bind ViewModel.StartMeeting}">Start Meeting</Button>
             </StackPanel>
-
-            <StackPanel>
-                <TextBlock>MoneyBurndown per Hour:</TextBlock>
-                <TextBlock Text="{Binding MoneyBurndownPerHour, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:#,#.00}'}" />
-            </StackPanel>
-
-            <StackPanel>
-                <TextBlock>Total Costs currently:</TextBlock>
-                <TextBlock Text="{Binding MoneyBurndownCounter, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:#,#.00}'}" />
-            </StackPanel>
-
-            <StackPanel>
-                <TextBlock>Elapsed Time:</TextBlock>
-                <TextBlock Text="{Binding ElapsedTime}" />
-            </StackPanel>
-
-            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Visibility="{Binding IsMeetingRunning, Converter={StaticResource ReversedBooleanToVisibilityConverter}}" Click="{x:Bind ViewModel.StartMeeting}">Start Meeting</Button>
-                <Button Visibility="{Binding IsMeetingRunning, Converter={StaticResource BooleanToVisibilityConverter}}" Click="{x:Bind ViewModel.PauseMeeting}">Pause Meeting</Button>
-                <Button Visibility="{Binding IsMeetingRunning, Converter={StaticResource BooleanToVisibilityConverter}}" Click="{x:Bind ViewModel.RestartMeeting}">Restart Meeting</Button>
-            </StackPanel>
-           
         </StackPanel>
-       
+
 
     </Grid>
 </Page>
