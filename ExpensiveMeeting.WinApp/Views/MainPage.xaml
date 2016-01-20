@@ -71,12 +71,12 @@
             <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource ReversedBooleanToVisibilityConverter}}">
                 <StackPanel Margin="12">
                     <TextBlock Margin="4">Number of People</TextBlock>
-                    <TextBox Margin="4" Text="{Binding NumberOfPeople}"></TextBox>
+                    <TextBox Margin="4" Text="{Binding NumberOfPeople, Mode=TwoWay}"></TextBox>
                 </StackPanel>
 
                 <StackPanel Margin="12">
-                    <TextBlock Margin="4">Average Salary</TextBlock>
-                    <TextBox Margin="4" Text="{Binding AverageSalery}"></TextBox>
+                    <TextBlock Margin="4">Average Salary per Year</TextBlock>
+                    <TextBox Margin="4" Text="{Binding AverageSalery, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </StackPanel>
 
