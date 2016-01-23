@@ -125,13 +125,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\background.jpg" />
-    <None Include="Assets\icons\appicon_128.png" />
-    <None Include="Assets\icons\appicon_16.png" />
-    <None Include="Assets\icons\appicon_24.png" />
-    <None Include="Assets\icons\appicon_256.png" />
-    <None Include="Assets\icons\appicon_32.png" />
-    <None Include="Assets\icons\appicon_512.png" />
-    <None Include="Assets\icons\appicon_64.png" />
+    <None Include="Assets\refIcons\appicon_128.png" />
+    <None Include="Assets\refIcons\appicon_16.png" />
+    <None Include="Assets\refIcons\appicon_24.png" />
+    <None Include="Assets\refIcons\appicon_256.png" />
+    <None Include="Assets\refIcons\appicon_32.png" />
+    <None Include="Assets\refIcons\appicon_512.png" />
+    <None Include="Assets\refIcons\appicon_64.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-48_altform-unplated.png" />
     <Content Include="Credits.txt" />
     <Content Include="Properties\Default.rd.xml" />

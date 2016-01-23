@@ -4,7 +4,7 @@
     <x:Double x:Key="NormalMinWidth">521</x:Double>
     <x:Double x:Key="WideMinWidth">1200</x:Double>
 
-    <Color x:Key="CustomColor">SteelBlue</Color>
+    <Color x:Key="CustomColor">DarkGray</Color>
     <SolidColorBrush x:Key="CustomColorBrush" Color="{StaticResource CustomColor}" />
 
     <Color x:Key="ContrastColor">White</Color>
