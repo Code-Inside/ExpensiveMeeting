@@ -15,7 +15,7 @@
         <vm:MainPageViewModel />
     </Page.DataContext>
     <Page.Resources>
-        <converters:StringFormatConverter x:Key="StringFormatConverter" />
+        <ownConverters:StringFormatConverter x:Key="StringFormatConverter" />
         <ownConverters:BooleanToVisibilityConverter IsReversed="True" x:Key="ReversedBooleanToVisibilityConverter" />
         <ownConverters:BooleanToVisibilityConverter IsReversed="False" x:Key="BooleanToVisibilityConverter" />
     </Page.Resources>
@@ -83,7 +83,7 @@
             <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <TextBlock Margin="0,2,0,2" HorizontalAlignment="Center" FontWeight="Light" Text="You already burned:" />
 
-                <TextBlock Margin="0,8,0,8" HorizontalAlignment="Center" FontSize="42" FontWeight="Bold" Text="{Binding MoneyBurndownCounter, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                <TextBlock Margin="0,8,0,8" HorizontalAlignment="Center" FontSize="42" FontWeight="Bold" Text="{Binding MoneyBurndownCounter, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C}'}" />
 
                 <TextBlock Margin="0,2,0,2" HorizontalAlignment="Center" FontWeight="Light" Text="Meeting Duration:" />
 
