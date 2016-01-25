@@ -32,7 +32,7 @@
                         <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <!--  TODO  -->
+                        <Setter Target="ControlHost.Margin" Value="0,17,0,0" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="VisualStateNormal">
@@ -63,7 +63,7 @@
 
         <!--  page content  -->
 
-        <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Center" Padding="12,8,12,8" Margin="24">
+        <StackPanel x:Name="ControlHost" MaxWidth="600" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Center" Padding="30,8,30,8" Margin="24">
             <StackPanel.Background>
                 <SolidColorBrush Color="Black" Opacity="0.6" />
             </StackPanel.Background>
