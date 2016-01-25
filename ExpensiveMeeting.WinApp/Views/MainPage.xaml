@@ -57,13 +57,12 @@
         <!--  #endregion  -->
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <!--  page content  -->
 
-        <StackPanel x:Name="ControlHost" MaxWidth="600" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Center" Padding="30,8,30,8" Margin="24">
+        <StackPanel x:Name="ControlHost" MaxWidth="600" Orientation="Vertical" Grid.Row="0" VerticalAlignment="Center" Padding="30,8,30,8" Margin="24">
             <StackPanel.Background>
                 <SolidColorBrush Color="Black" Opacity="0.6" />
             </StackPanel.Background>
