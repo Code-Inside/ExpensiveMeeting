@@ -19,7 +19,7 @@
         <ownConverters:BooleanToVisibilityConverter IsReversed="True" x:Key="ReversedBooleanToVisibilityConverter" />
         <ownConverters:BooleanToVisibilityConverter IsReversed="False" x:Key="BooleanToVisibilityConverter" />
     </Page.Resources>
-    <Grid>
+    <Grid x:Name="PageHost">
         <Grid.Background>
             <ImageBrush ImageSource="ms-appx:///Assets/background.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
@@ -32,7 +32,7 @@
                         <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="ControlHost.Margin" Value="0,17,0,0" />
+                        <Setter Target="ControlHost.Padding" Value="50,8,50,8" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="VisualStateNormal">
@@ -51,6 +51,24 @@
                         <!--  TODO  -->
                     </VisualState.Setters>
                 </VisualState>
+
+            </VisualStateGroup>
+            <VisualStateGroup x:Name="WindowHeightStates">
+                <VisualState x:Name="TallState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="400" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ControlHost.Margin" Value="50" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="ShortState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                    </VisualState.Setters>
+                </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
@@ -62,7 +80,7 @@
 
         <!--  page content  -->
 
-        <StackPanel x:Name="ControlHost" MaxWidth="600" Orientation="Vertical" Grid.Row="0" VerticalAlignment="Center" Padding="30,8,30,8" Margin="24">
+        <StackPanel x:Name="ControlHost" MaxWidth="600" Orientation="Vertical" Grid.Row="0" VerticalAlignment="Center" Padding="30,8,30,8">
             <StackPanel.Background>
                 <SolidColorBrush Color="Black" Opacity="0.6" />
             </StackPanel.Background>
@@ -90,21 +108,24 @@
 
                 <TextBlock Margin="0,8,0,2" HorizontalAlignment="Center" FontWeight="Bold" Text="Burnrates" />
 
-                <StackPanel Margin="0,8,0,2" HorizontalAlignment="Center">
-                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Text="{Binding MoneyBurndownPerMinute, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
-                    <TextBlock HorizontalAlignment="Center">1min</TextBlock>
-                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
-                <StackPanel Margin="0,8,0,2" HorizontalAlignment="Center">
-                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Text="{Binding MoneyBurndownPerFithteenMinutes, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
-                    <TextBlock HorizontalAlignment="Center">15min</TextBlock>
-                </StackPanel>
+                    <StackPanel Margin="8,8,8,2">
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Text="{Binding MoneyBurndownPerMinute, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                        <TextBlock HorizontalAlignment="Center">1min</TextBlock>
+                    </StackPanel>
 
-                <StackPanel Margin="0,8,0,2" HorizontalAlignment="Center">
-                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Text="{Binding MoneyBurndownPerHour, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
-                    <TextBlock HorizontalAlignment="Center">60min</TextBlock>
+                    <StackPanel Margin="8,8,8,2">
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Text="{Binding MoneyBurndownPerFithteenMinutes, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                        <TextBlock HorizontalAlignment="Center">15min</TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Margin="8,8,8,2">
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Text="{Binding MoneyBurndownPerHour, Converter={StaticResource StringFormatConverter}, ConverterParameter='{}{0:C2}'}" />
+                        <TextBlock HorizontalAlignment="Center">60min</TextBlock>
+                    </StackPanel>
+
                 </StackPanel>
-               
             </StackPanel>
 
             <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource BooleanToVisibilityConverter}}" Orientation="Horizontal" HorizontalAlignment="Center">
