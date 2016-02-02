@@ -18,6 +18,20 @@
         <ownConverters:StringFormatConverter x:Key="StringFormatConverter" />
         <ownConverters:BooleanToVisibilityConverter IsReversed="True" x:Key="ReversedBooleanToVisibilityConverter" />
         <ownConverters:BooleanToVisibilityConverter IsReversed="False" x:Key="BooleanToVisibilityConverter" />
+        <converters:ValueWhenConverter x:Key="NotTrueConverter">
+            <converters:ValueWhenConverter.When>
+                <x:Boolean>True</x:Boolean>
+            </converters:ValueWhenConverter.When>
+            <converters:ValueWhenConverter.Value>
+                <x:Boolean>False</x:Boolean>
+            </converters:ValueWhenConverter.Value>
+            <converters:ValueWhenConverter.Otherwise>
+                <x:Boolean>True</x:Boolean>
+            </converters:ValueWhenConverter.Otherwise>
+            <converters:ValueWhenConverter.OtherwiseValueBack>
+                <x:Boolean>False</x:Boolean>
+            </converters:ValueWhenConverter.OtherwiseValueBack>
+        </converters:ValueWhenConverter>
     </Page.Resources>
     <Grid x:Name="PageHost">
         <Grid.Background>
@@ -88,12 +102,12 @@
             <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource ReversedBooleanToVisibilityConverter}}">
                 <StackPanel Margin="12">
                     <TextBlock Margin="4">Number of People</TextBlock>
-                    <TextBox Margin="4" Text="{Binding NumberOfPeople, Mode=TwoWay}"></TextBox>
+                    <TextBox x:Name="NumberOfPeople" TextChanged="NumberOfPeopleTextBox_OnTextChanged" Margin="4" Text="{Binding NumberOfPeople, Mode=TwoWay}"></TextBox>
                 </StackPanel>
 
                 <StackPanel Margin="12">
                     <TextBlock Margin="4">Average Salary per Year</TextBlock>
-                    <TextBox Margin="4" Text="{Binding AverageSalery, Mode=TwoWay}"></TextBox>
+                    <TextBox x:Name="AverageSalery" TextChanged="SaleryTextBox_OnTextChanged" Margin="4" Text="{Binding AverageSalery, Mode=TwoWay}"></TextBox>
                 </StackPanel>
             </StackPanel>
 
@@ -134,7 +148,7 @@
                 <Button Opacity="1" Margin="4,4,4,4" Visibility="{Binding IsMeetingRunning, Converter={StaticResource BooleanToVisibilityConverter}}" Click="{x:Bind ViewModel.RestartMeeting}">Restart Meeting</Button>
             </StackPanel>
             <StackPanel Visibility="{Binding IsMeetingStarted, Converter={StaticResource ReversedBooleanToVisibilityConverter}}" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Opacity="1" Margin="4,4,4,4" Click="{x:Bind ViewModel.StartMeeting}">Start Meeting</Button>
+                <Button Opacity="1" Margin="4,4,4,4" IsEnabled="{Binding HasValidationErrors, Converter={StaticResource NotTrueConverter}}" Click="{x:Bind ViewModel.StartMeeting}">Start Meeting</Button>
             </StackPanel>
         </StackPanel>
 

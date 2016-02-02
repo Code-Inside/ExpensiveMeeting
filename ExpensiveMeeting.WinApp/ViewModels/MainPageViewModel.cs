@@ -41,6 +41,10 @@ namespace ExpensiveMeeting.WinApp.ViewModels
         bool _IsMeetingStarted;
         public bool IsMeetingStarted { get { return _IsMeetingStarted; } set { Set(ref _IsMeetingStarted, value); } }
 
+        bool _HasValidationErrors;
+        public bool HasValidationErrors { get { return _HasValidationErrors; } set { Set(ref _HasValidationErrors, value); } }
+
+
         TimeSpan _ElapsedTime;
         public TimeSpan ElapsedTime { get { return _ElapsedTime; } set { Set(ref _ElapsedTime, value); } }
 
@@ -87,7 +91,6 @@ namespace ExpensiveMeeting.WinApp.ViewModels
                 await Task.Delay(TimeSpan.FromSeconds(1));
             }
         }
-
 
         public void StartMeeting()
         {
