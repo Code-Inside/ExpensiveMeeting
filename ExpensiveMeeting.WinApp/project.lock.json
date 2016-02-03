@@ -1554,10 +1554,10 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.1": {
+      "Template10/1.1.2": {
         "dependencies": {
-          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.2, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
@@ -3209,10 +3209,10 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.1": {
+      "Template10/1.1.2": {
         "dependencies": {
-          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.2, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
@@ -4836,10 +4836,10 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.1": {
+      "Template10/1.1.2": {
         "dependencies": {
-          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.2, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
@@ -6496,10 +6496,10 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.1": {
+      "Template10/1.1.2": {
         "dependencies": {
-          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.2, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
@@ -8123,10 +8123,10 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.1": {
+      "Template10/1.1.2": {
         "dependencies": {
-          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.2, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
@@ -9783,10 +9783,10 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.1": {
+      "Template10/1.1.2": {
         "dependencies": {
-          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.2, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
@@ -11410,10 +11410,10 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.1": {
+      "Template10/1.1.2": {
         "dependencies": {
-          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.2, )",
-          "Newtonsoft.Json": "[7.0.1, )"
+          "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
+          "Newtonsoft.Json": "[8.0.2, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
@@ -14816,8 +14816,8 @@
         "System.Xml.XmlSerializer.nuspec"
       ]
     },
-    "Template10/1.1.1": {
-      "sha512": "AmWowZLiQ26I/nwDzjMVv/4XBPmabEYuA9qOoiWk1utk83ZZvmV6LD5xQs/MYIHRySiRV/kDISuBvVX7n25Zzw==",
+    "Template10/1.1.2": {
+      "sha512": "4/AWSD+URxpX+zxYqGoVRzIaMJhTQY9FpxxBM/8xR+aabdai99r6vTwB7tzg+mkeH1KKNBAChIq9VAG1HMEOXA==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -14830,7 +14830,7 @@
         "lib/uap10.0/Template10Library/Properties/Template10Library.rd.xml",
         "lib/uap10.0/Template10Library/Template10Library.xr.xml",
         "lib/uap10.0/Template10Library/Themes/Generic.xaml",
-        "package/services/metadata/core-properties/9c964951abad4444be05fb1a96cb6917.psmdcp",
+        "package/services/metadata/core-properties/0f9d5b0fa42545b8b686ed32e4f5c45a.psmdcp",
         "Template10.nuspec"
       ]
     }
@@ -14840,7 +14840,7 @@
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "Microsoft.Xaml.Behaviors.Uwp.Managed >= 1.0.3",
       "Newtonsoft.Json >= 8.0.2",
-      "Template10 >= 1.1.1"
+      "Template10 >= 1.1.2"
     ],
     "UAP,Version=v10.0": []
   }
