@@ -1554,16 +1554,25 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.2": {
+      "Template10/1.1.3": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
-          "Newtonsoft.Json": "[8.0.2, )"
+          "Newtonsoft.Json": "[8.0.2, )",
+          "WindowsStateTriggers": "[1.1.0, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
         },
         "runtime": {
           "lib/uap10.0/Template10Library.dll": {}
+        }
+      },
+      "WindowsStateTriggers/1.1.0": {
+        "compile": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
         }
       }
     },
@@ -3209,16 +3218,25 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.2": {
+      "Template10/1.1.3": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
-          "Newtonsoft.Json": "[8.0.2, )"
+          "Newtonsoft.Json": "[8.0.2, )",
+          "WindowsStateTriggers": "[1.1.0, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
         },
         "runtime": {
           "lib/uap10.0/Template10Library.dll": {}
+        }
+      },
+      "WindowsStateTriggers/1.1.0": {
+        "compile": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
         }
       }
     },
@@ -4836,16 +4854,25 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.2": {
+      "Template10/1.1.3": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
-          "Newtonsoft.Json": "[8.0.2, )"
+          "Newtonsoft.Json": "[8.0.2, )",
+          "WindowsStateTriggers": "[1.1.0, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
         },
         "runtime": {
           "lib/uap10.0/Template10Library.dll": {}
+        }
+      },
+      "WindowsStateTriggers/1.1.0": {
+        "compile": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
         }
       }
     },
@@ -6496,16 +6523,25 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.2": {
+      "Template10/1.1.3": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
-          "Newtonsoft.Json": "[8.0.2, )"
+          "Newtonsoft.Json": "[8.0.2, )",
+          "WindowsStateTriggers": "[1.1.0, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
         },
         "runtime": {
           "lib/uap10.0/Template10Library.dll": {}
+        }
+      },
+      "WindowsStateTriggers/1.1.0": {
+        "compile": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
         }
       }
     },
@@ -8123,16 +8159,25 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.2": {
+      "Template10/1.1.3": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
-          "Newtonsoft.Json": "[8.0.2, )"
+          "Newtonsoft.Json": "[8.0.2, )",
+          "WindowsStateTriggers": "[1.1.0, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
         },
         "runtime": {
           "lib/uap10.0/Template10Library.dll": {}
+        }
+      },
+      "WindowsStateTriggers/1.1.0": {
+        "compile": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
         }
       }
     },
@@ -9783,16 +9828,25 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.2": {
+      "Template10/1.1.3": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
-          "Newtonsoft.Json": "[8.0.2, )"
+          "Newtonsoft.Json": "[8.0.2, )",
+          "WindowsStateTriggers": "[1.1.0, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
         },
         "runtime": {
           "lib/uap10.0/Template10Library.dll": {}
+        }
+      },
+      "WindowsStateTriggers/1.1.0": {
+        "compile": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
         }
       }
     },
@@ -11410,16 +11464,25 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Template10/1.1.2": {
+      "Template10/1.1.3": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Uwp.Managed": "[1.0.3, )",
-          "Newtonsoft.Json": "[8.0.2, )"
+          "Newtonsoft.Json": "[8.0.2, )",
+          "WindowsStateTriggers": "[1.1.0, )"
         },
         "compile": {
           "lib/uap10.0/Template10Library.dll": {}
         },
         "runtime": {
           "lib/uap10.0/Template10Library.dll": {}
+        }
+      },
+      "WindowsStateTriggers/1.1.0": {
+        "compile": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/WindowsStateTriggers.dll": {}
         }
       }
     }
@@ -14816,8 +14879,8 @@
         "System.Xml.XmlSerializer.nuspec"
       ]
     },
-    "Template10/1.1.2": {
-      "sha512": "4/AWSD+URxpX+zxYqGoVRzIaMJhTQY9FpxxBM/8xR+aabdai99r6vTwB7tzg+mkeH1KKNBAChIq9VAG1HMEOXA==",
+    "Template10/1.1.3": {
+      "sha512": "8k/7n6juojwhYfGcS4HWspg+bb5/Qjyra1fG11eOGXjBQq5m3g1/BTlY9YZF9G8ScB9xfCrdttCKzJ5HUqHG2w==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -14830,8 +14893,46 @@
         "lib/uap10.0/Template10Library/Properties/Template10Library.rd.xml",
         "lib/uap10.0/Template10Library/Template10Library.xr.xml",
         "lib/uap10.0/Template10Library/Themes/Generic.xaml",
-        "package/services/metadata/core-properties/0f9d5b0fa42545b8b686ed32e4f5c45a.psmdcp",
+        "package/services/metadata/core-properties/682df099b62f40c5823742d0bd909997.psmdcp",
         "Template10.nuspec"
+      ]
+    },
+    "WindowsStateTriggers/1.1.0": {
+      "sha512": "63CKlow5uM8/WnhqX8dGMabUZlg3CKKdkao++BuXffTXqPfUyoMfI8vcc9qKcH1TL9dDEj7jWLAqcwkdObhIqQ==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/uap10.0/WindowsStateTriggers.dll",
+        "lib/uap10.0/WindowsStateTriggers.pdb",
+        "lib/uap10.0/WindowsStateTriggers.pri",
+        "lib/uap10.0/WindowsStateTriggers.xml",
+        "lib/uap10.0/WindowsStateTriggers/Properties/WindowsStateTriggers.rd.xml",
+        "package/services/metadata/core-properties/213c5cc4ac7f48458ee3303b7ccd3557.psmdcp",
+        "src/AdaptiveTrigger.cs",
+        "src/CompareStateTrigger.cs",
+        "src/CompositeStateTrigger.cs",
+        "src/DeviceFamilyStateTrigger.cs",
+        "src/EqualsStateTrigger.cs",
+        "src/FullScreenModeTrigger.cs",
+        "src/HostedStateTrigger.cs",
+        "src/InputTypeTrigger.cs",
+        "src/IsFalseStateTrigger.cs",
+        "src/IsNullOrEmptyStateTrigger.cs",
+        "src/IsTypePresentStateTrigger.cs",
+        "src/ITriggerValue.cs",
+        "src/NetworkConnectionStateTrigger.cs",
+        "src/NotEqualStateTrigger.cs",
+        "src/obj/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs",
+        "src/obj/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs",
+        "src/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs",
+        "src/OrientationStateTrigger.cs",
+        "src/Properties/AssemblyInfo.cs",
+        "src/RegexStateTrigger.cs",
+        "src/UserHandPreferenceStateTrigger.cs",
+        "src/UserInteractionModeTrigger.cs",
+        "src/WeakEventListener.cs",
+        "WindowsStateTriggers.nuspec"
       ]
     }
   },
@@ -14840,7 +14941,7 @@
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "Microsoft.Xaml.Behaviors.Uwp.Managed >= 1.0.3",
       "Newtonsoft.Json >= 8.0.2",
-      "Template10 >= 1.1.2"
+      "Template10 >= 1.1.3"
     ],
     "UAP,Version=v10.0": []
   }
