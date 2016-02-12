@@ -22,6 +22,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+# Win10 Dev
+BundleArtifacts/
+
 # Visual Studo 2015 cache/options directory
 .vs/
 
@@ -195,3 +198,4 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 ExpensiveMeeting.WinApp/null
+ExpensiveMeeting.WinApp/_pkginfo.txt
