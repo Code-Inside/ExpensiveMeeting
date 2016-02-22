@@ -88,14 +88,18 @@
                                 <LineBreak/>
                                 <Bold>Credits</Bold>
                                 <LineBreak/>
-                                AppIcon Source: http://www.flaticon.com/free-icon/business-meeting_71896
+                                AppIcon Source: 
+                                <LineBreak/>
+                                <Hyperlink NavigateUri="http://www.flaticon.com/free-icon/business-meeting_71896">flaticon.com</Hyperlink>
                                 <LineBreak/>
                                 Icon made by www.freepik.com from www.flaticon.com is licensed under Creative Commons BY 3.0.
                                 <LineBreak/>
                                 <LineBreak/>
                                 <Bold>Source Code</Bold>
                                 <LineBreak/>
-                                The Code is available on GitHub.
+                                The Code is available on GitHub:
+                                <LineBreak/>
+                                <Hyperlink NavigateUri="https://github.com/Code-Inside/ExpensiveMeeting">Code-Inside/ExpensiveMeeting</Hyperlink>
                             </TextBlock>
                         </StackPanel>
 
