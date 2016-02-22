@@ -46,7 +46,7 @@
                         <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="ControlHost.Padding" Value="50,8,50,8" />
+                        <Setter Target="ControlHost.Padding" Value="24,8,24,8" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="VisualStateNormal">
@@ -73,7 +73,7 @@
                         <AdaptiveTrigger MinWindowHeight="400" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="ControlHost.Margin" Value="50" />
+                        <Setter Target="ControlHost.Margin" Value="24" />
                     </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="ShortState">
