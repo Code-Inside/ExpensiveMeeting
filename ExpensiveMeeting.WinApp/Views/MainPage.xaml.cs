@@ -30,12 +30,21 @@ namespace ExpensiveMeeting.WinApp.Views
             {
                 averageSaleryIsInvalid = true;
             }
+            else if (salery < 0)
+            {
+                averageSaleryIsInvalid = true;
+            }
 
             int numberOfPeople;
             if (!int.TryParse(NumberOfPeople.Text, out numberOfPeople))
             {
                 numberOfPeopleIsInvalid = true;
             }
+            else if (numberOfPeople < 0)
+            {
+                numberOfPeopleIsInvalid = true;
+            }
+
 
             if (numberOfPeopleIsInvalid || averageSaleryIsInvalid)
             {
